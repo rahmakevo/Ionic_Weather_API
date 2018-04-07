@@ -8,9 +8,10 @@ import { WeatherProvider } from '../../providers/weather/weather';
 })
 export class HomePage {
 
-  weather: any;
+  data: any;
   location : {
-    city : string;
+    city : string,
+    state : string
   }
 
   constructor(public navCtrl: NavController, private weatherProvider: WeatherProvider) {
@@ -19,12 +20,13 @@ export class HomePage {
 
   ionViewWillEnter() {
     this.location = {
-      city: 'Miami'
+      city: 'Miami',
+      state: "FL"
     }
-    this.weatherProvider.getWeather(this.location.city)
-    .subscribe(weather => {
-      console.log(weather);
-      this.weather = weather.Object;  
+    this.weatherProvider.getWeather(this.location.city, this.location.state)
+    .subscribe(data => {
+      console.log(data);
+      this.data = data;
     });
   }
 

@@ -10,16 +10,16 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class WeatherProvider {
-  apiKey ='b0592d72052843dffd9aab55423a04a0';
+  apiKey = "e0c2501d2a0582d1";
   url;
 
   constructor(public http: Http) {
     console.log('Hello WeatherProvider Provider');
-    this.url = 'http://api.openweathermap.org/data/2.5/weather?q';
+    this.url = 'http://api.wunderground.com/api/'+this.apiKey+'/conditions/q';
   }
 
-  getWeather(city){
-    return this.http.get(this.url+'='+city+'&appid='+this.apiKey).map(res => res.json());
+  getWeather(city, state){
+    return this.http.get(this.url+'/'+state+'/'+city+'.json').map(res => res.json());
   }
 
 }
