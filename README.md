@@ -5,10 +5,10 @@ Sample tutorial for Ionic Framework
 ## Getting started
 
 One will need the following on your machine :
-*Install Nodejs
-*Install Ionic
-*Install Cordova
-*Use tabs Ionic Template
+*[Install Nodejs]
+*[Install Ionic]
+*[Install Cordova]
+*[Use tabs Ionic Template]
 
 ### Dependencies and Framework
 
