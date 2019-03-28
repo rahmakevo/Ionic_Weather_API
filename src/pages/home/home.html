@@ -7,32 +7,31 @@
 <ion-content padding class="home">
   <ion-grid *ngIf="data">
     <ion-row>
-      <ion-col width-50 offset-25>
-        <h2 class="location">{{data.current_observation.display_location.full}}</h2>
+      <ion-col>
+        <h5 class="location">{{data.name}}</h5>
         <div class="icon">
-          <img src="{{data.current_observation.icon_url}}" alt="">
+          <img src="http://openweathermap.org/img/w/{{weather.icon}}.png" alt="">
         </div>
-        <h3 class="desc">{{data.current_observation.weather}}</h3>
-        <h1 class="temp">{{data.current_observation.temp_f}}&deg;</h1>
+        <p class="desc">{{weather.description}}</p>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col width-100 id="row">
         <ion-list>
           <ion-item>
-            <strong>Temp: {{data.current_observation.temperature_string}}</strong>
+            <strong>Temp: {{data.main.temp}}</strong>
           </ion-item>
           <ion-item>
-            <strong>Relative Humidity: {{data.current_observation.relative_humidity}}</strong>
+            <strong>Relative Humidity: {{data.main.humidity}}</strong>
           </ion-item>
           <ion-item>
-            <strong>Dewpoint: {{data.current_observation.dewpoint_string}}</strong>
+            <strong>Visibility: {{data.visibility}}</strong>
           </ion-item>
           <ion-item>
-            <strong>Visibility: {{data.current_observation.visibility_mi}}</strong>
+            <strong>Wind Speed: {{data.wind.speed}}</strong>
           </ion-item>
           <ion-item>
-            <strong>Heat Index: {{data.current_observation.heat_index_string}}</strong>
+            <strong>Wind Degrees: {{data.wind.deg}}</strong>
           </ion-item>
         </ion-list>
       </ion-col>

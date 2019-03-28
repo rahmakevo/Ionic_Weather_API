@@ -12,9 +12,9 @@ export class HomePage {
   data: any;
   location : {
     city : string,
-    state : string
+    country : string
   }
-
+  weather: any;
   constructor(
     public navCtrl: NavController,
     private weatherProvider: WeatherProvider,
@@ -29,13 +29,13 @@ export class HomePage {
         this.location = JSON.parse(val);
       } else {
         this.location = {
-          city: 'Miami',
-          state: "FL"
+          city: 'Nairobi',
+          country: "Kenya"
         }
       }
-      this.weatherProvider.getWeather(this.location.city, this.location.state).subscribe(data => {
-        console.log(data);
+      this.weatherProvider.getWeather(this.location.city).subscribe(data => {
         this.data = data;
+        this.weather = data.weather[0];
       });
 
     });
